@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:day_picker/day_picker.dart';
+import 'package:code_blooded/DSCompetence.dart';
 
 class Availability extends StatelessWidget {
   @override
@@ -44,7 +45,11 @@ class Availability extends StatelessWidget {
           Container(
             height: 25.0,
             child: RaisedButton(
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => DSCompetence(),
+                  )),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(80.0)),
               padding: EdgeInsets.all(0.0),

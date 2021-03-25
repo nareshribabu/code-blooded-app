@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 2021/03/21-11:53:34.949 14c03 Reusing MANIFEST /private/var/folders/jn/dc9jvybd6qj7pn245rh6l9sw0000gn/T/flutter_tools.HP8sqc/flutter_tools_chrome_device.ZAaSNN/Default/Platform Notifications/MANIFEST-000001
 2021/03/21-11:53:34.958 14c03 Recovering log #3
 2021/03/21-11:53:34.958 14c03 Reusing old log /private/var/folders/jn/dc9jvybd6qj7pn245rh6l9sw0000gn/T/flutter_tools.HP8sqc/flutter_tools_chrome_device.ZAaSNN/Default/Platform Notifications/000003.log 
+=======
+2021/03/24-19:23:24.796 bb03 Reusing MANIFEST /private/var/folders/nn/zh7vbc8500nffkwz3plgpqqh0000gn/T/flutter_tools.MOCJ1E/flutter_tools_chrome_device.AU7aer/Default/Platform Notifications/MANIFEST-000001
+2021/03/24-19:23:24.800 bb03 Recovering log #3
+2021/03/24-19:23:24.800 bb03 Reusing old log /private/var/folders/nn/zh7vbc8500nffkwz3plgpqqh0000gn/T/flutter_tools.MOCJ1E/flutter_tools_chrome_device.AU7aer/Default/Platform Notifications/000003.log 
+>>>>>>> 598bd1789662c2ef493bb718b24a9911bab36f5e

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db9252ad-d799-4870-8aaf-f9278266c3ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/code-blooded.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/code-blooded.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Availability.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Availability.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/DSCompetence.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DSCompetence.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1q4cq2lh8er4VmxojCeWPFVtFzY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db9252ad-d799-4870-8aaf-f9278266c3ed" name="Default Changelist" comment="" />
+      <created>1616342489451</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616342489451</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="559" y="-893" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616343027540">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state x="559" y="-893" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616343027540" />
+    <state x="726" y="-825" key="#main.dart" timestamp="1616342951414">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state x="726" y="-825" key="#main.dart/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616342951414" />
+    <state width="914" height="258" key="GridCell.Tab.0.bottom" timestamp="1616636951223">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state width="914" height="258" key="GridCell.Tab.0.bottom/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616636951223" />
+    <state width="1238" height="175" key="GridCell.Tab.0.bottom/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250690" />
+    <state width="914" height="258" key="GridCell.Tab.0.center" timestamp="1616636951221">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state width="914" height="258" key="GridCell.Tab.0.center/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616636951221" />
+    <state width="1238" height="175" key="GridCell.Tab.0.center/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250689" />
+    <state width="914" height="258" key="GridCell.Tab.0.left" timestamp="1616636951220">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state width="914" height="258" key="GridCell.Tab.0.left/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616636951220" />
+    <state width="1238" height="175" key="GridCell.Tab.0.left/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250688" />
+    <state width="914" height="258" key="GridCell.Tab.0.right" timestamp="1616636951221">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state width="914" height="258" key="GridCell.Tab.0.right/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616636951221" />
+    <state width="1238" height="175" key="GridCell.Tab.0.right/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250690" />
+    <state x="130" y="-781" key="IDE.errors.dialog" timestamp="1616629892368">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state x="130" y="-781" key="IDE.errors.dialog/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616629892368" />
+    <state x="422" y="-943" key="SettingsEditor" timestamp="1616343414803">
+      <screen x="-697" y="-1055" width="2560" height="1055" />
+    </state>
+    <state x="422" y="-943" key="SettingsEditor/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616343414803" />
+  </component>
+</project>

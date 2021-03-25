@@ -48,6 +48,7 @@ class Availability extends StatelessWidget {
               onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
+                    // builder: (BuildContext context) => DSCompetence(),
                     builder: (BuildContext context) => DSCompetence(),
                   )),
               shape: RoundedRectangleBorder(

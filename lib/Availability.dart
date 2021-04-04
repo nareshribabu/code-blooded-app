@@ -1,195 +1,229 @@
-// // // SecondScreen.dart
-
-// // import 'package:flutter/material.dart';
-// // import 'package:day_picker/day_picker.dart';
-
-// class Availability extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//         children: [
-//           Container(
-//               child: SizedBox(
-//             width: 235,
-//             child: Text(
-//               "What’s your availability like?",
-//               style: TextStyle(
-//                   color: Colors.black,
-//                   fontSize: 16,
-//                   fontFamily: 'Source Sans Pro'),
-//             ),
-//           )),
-//           Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: SelectWeekDays(
-//               border: false,
-//               boxDecoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(30.0),
-//                 gradient: LinearGradient(
-//                     begin: Alignment.topCenter,
-//                     end: Alignment.bottomCenter,
-//                     colors: [
-//                       Color(0xff63d8f7),
-//                       Color(0xff5284f7),
-//                       Color(0xff7f65f8)
-//                     ]),
-//               ),
-//               onSelect: (values) {
-//                 print(values);
-//               },
-//             ),
-//           ),
-//           Container(
-//             height: 25.0,
-//             child: RaisedButton(
-//               onPressed: () => Navigator.push(
-//                   context,
-//                   MaterialPageRoute(
-//                     builder: (BuildContext context) => DSCompetence(),
-//                   )),
-//               shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(80.0)),
-//               padding: EdgeInsets.all(0.0),
-//               child: Ink(
-//                 decoration: BoxDecoration(
-//                     gradient: LinearGradient(
-//                       colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-//                       begin: Alignment.centerLeft,
-//                       end: Alignment.centerRight,
-//                     ),
-//                     borderRadius: BorderRadius.circular(30.0)),
-//                 child: Container(
-//                   constraints: BoxConstraints(maxWidth: 120.0, maxHeight: 25.0),
-//                   alignment: Alignment.center,
-//                   child: Text(
-//                     "Next",
-//                     textAlign: TextAlign.center,
-//                     style: TextStyle(color: Colors.white),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-// SecondScreen.dart
-
 import 'package:flutter/material.dart';
 import 'package:day_picker/day_picker.dart';
-import 'package:weekday_selector/weekday_selector.dart';
 import 'package:code_blooded/DSCompetence.dart';
+import 'package:flutter/services.dart';
+import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 
-class Availability extends StatefulWidget {
-  @override
-  AvailabilityState createState() => AvailabilityState();
-}
+class Availability extends StatelessWidget {
+  TextEditingController hoursController = new TextEditingController();
+  TextEditingController minutesController = new TextEditingController();
 
-class AvailabilityState extends State<Availability> {
-  final values = <bool>[false, false, false, false, false, false, false];
-  int days = 0;
-  // final daysSelected = <String>[
-  //   "Monday",
-  //   "Tuesday",
-  //   "Wednesday",
-  //   "Thursday",
-  //   "Friday",
-  //   "Saturday",
-  //   "Sunday"
-  // ];
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[Color(0xff63d8f7), Color(0xff5284f7)],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 100.0, 70.0));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Container(
-              child: SizedBox(
-            width: 235,
-            child: Text(
-              "What’s your availability like?",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontFamily: 'Source Sans Pro'),
-            ),
-          )),
-          // Text('We support custom elevations, too!'),
-          WeekdaySelector(
-            selectedFillColor: Colors.indigo.shade500,
-            onChanged: (v) {
-              printIntAsDay(v);
-              setState(() {
-                values[v % 7] = !values[v % 7];
-              });
-              days = 0;
-              for (var isDayTrue in values) if (isDayTrue == true) days++;
-              print(days);
-            },
-            selectedElevation: 15,
-            elevation: 5,
-            disabledElevation: 0,
-            values: values,
-          ),
-          Container(
-            height: 25.0,
-            child: RaisedButton(
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    // builder: (BuildContext context) => DSCompetence(),
-                    builder: (BuildContext context) => DSCompetence(),
-                  )),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: EdgeInsets.all(0.0),
-              child: Ink(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                width: 400,
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
+                    child: Container(
+                      width: 350.0,
+                      height: 264.0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 330,
+                            height: 50,
+                            child: Text(
+                              "What's your availability like?",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff121212),
+                                  fontFamily: 'Source Sans Pro'),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 330,
+                            height: 50,
+                            child: Text(
+                              "Days per week",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Source Sans Pro'),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                            child: SelectWeekDays(
+                              border: false,
+                              boxDecoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40.0),
+                                color: Color(0xff4397eb),
+                              ),
+                              onSelect: (values) {
+                                print(values);
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            width: 330,
+                            height: 50,
+                            child: Text(
+                              "Hours per day",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Source Sans Pro'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  constraints: BoxConstraints(maxWidth: 120.0, maxHeight: 25.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Next",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: Container(
+                            width: 300.0,
+                            height: 110.0,
+                            child: Wrap(spacing: 60, children: [
+                              SizedBox(
+                                  width: 120,
+                                  child: TextFormField(
+                                    controller: hoursController,
+                                    textAlign: TextAlign.left,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: <TextInputFormatter>[
+                                      FilteringTextInputFormatter.digitsOnly,
+                                      // FilteringTextInputFormatter.allow(RegExp(r'[0-9]{2}$')),
+                                    ],
+                                    decoration: InputDecoration(
+                                      hintText: 'HH',
+                                      labelText: 'Hours ',
+                                    ),
+                                  )),
+                              SizedBox(
+                                  width: 120,
+                                  child: TextFormField(
+                                    controller: minutesController,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: <TextInputFormatter>[
+                                      FilteringTextInputFormatter.digitsOnly,
+                                      // FilteringTextInputFormatter.allow(RegExp(r'^[0-9]{2}$')),
+                                    ],
+                                    textAlign: TextAlign.left,
+                                    decoration: InputDecoration(
+                                      hintText: 'MM',
+                                      labelText: 'Minutes ',
+                                    ),
+                                  ))
+                            ])))
+                  ]),
+              Row(mainAxisAlignment: MainAxisAlignment.start, children: <
+                  Widget>[
+                Padding(
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: Container(
+                        width: 300.0,
+                        height: 50.0,
+                        child: Wrap(spacing: 100, children: [
+                          SizedBox(
+                              width: 120,
+                              height: 50,
+                              child: Text(
+                                "Time period",
+                                textAlign: TextAlign.right,
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    color: Color(0xff121212),
+                                    fontFamily: 'Source Sans Pro'),
+                              )),
+                          new MaterialButton(
+                              color: Color(0xff4397eb),
+                              height: 50,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40.0)),
+                              onPressed: () async {
+                                final List<DateTime> picked =
+                                    await DateRangePicker.showDatePicker(
+                                        context: context,
+                                        initialFirstDate: new DateTime.now(),
+                                        initialLastDate: (new DateTime.now())
+                                            .add(new Duration(days: 7)),
+                                        firstDate: new DateTime(2015),
+                                        lastDate: new DateTime(
+                                            DateTime.now().year + 2));
+                                if (picked != null && picked.length == 2) {
+                                  print(picked);
+                                }
+                              },
+                              child: new Icon(Icons.calendar_today,
+                                  color: Colors.white)),
+                        ])))
+              ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(70, 0, 0, 40),
+                    child: Image.asset(
+                      'assets/images/timeCalendar.png',
+                      height: 180,
+                      width: 230,
+                    ),
+                  )
+                ],
+              ),
+              // Padding(
+              //     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+              //     child:
+              Container(
+                height: 25,
+                child: RaisedButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => DSCompetence(),
+                      )),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80)),
+                  padding: EdgeInsets.all(0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xff374ABE), Color(0xff64B6FF)],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Container(
+                      constraints: BoxConstraints(maxWidth: 120, maxHeight: 25),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Next",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-          )
-        ],
+              )
+              // )
+            ],
+          ),
+        ),
       ),
     );
   }
-}
-
-/// Print the integer value of the day and the day that it corresponds to in English.
-///
-/// It's added to the example so that you can always see and verify that the
-/// code is correct.
-printIntAsDay(int day) {
-  print('Received integer: $day. Corresponds to day: ${intDayToEnglish(day)}');
-}
-
-String intDayToEnglish(int day) {
-  if (day % 7 == DateTime.monday % 7) return 'Monday';
-  if (day % 7 == DateTime.tuesday % 7) return 'Tueday';
-  if (day % 7 == DateTime.wednesday % 7) return 'Wednesday';
-  if (day % 7 == DateTime.thursday % 7) return 'Thursday';
-  if (day % 7 == DateTime.friday % 7) return 'Friday';
-  if (day % 7 == DateTime.saturday % 7) return 'Saturday';
-  if (day % 7 == DateTime.sunday % 7) return 'Sunday';
-  throw '🐞 This should never have happened: $day';
 }

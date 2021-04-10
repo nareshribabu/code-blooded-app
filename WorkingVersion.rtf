@@ -1,0 +1,200 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // Given the start date and end date, this function calculates how many days of a particular day are in that date range\
+int totalDays (int startYear, int startMonth, int startDay, int endYear, int endMonth, int endDay, int dayOfTheWeek) \{\
+  \
+  // take in as arguments the start date and end date\
+  DateTime startDate = DateTime.utc(startYear, startMonth, startDay);\
+  DateTime endDate = DateTime.utc(endYear, endMonth, endDay);\
+  \
+  DateTime currentDay = startDate;\
+  \
+  int totalDays = 0;\
+ \
+  \
+//   print(startDate);\
+//   print(endDate);\
+//   print(endDate.difference(startDate).inDays);\
+  \
+  while(currentDay.isBefore(endDate)) \{\
+    currentDay = currentDay.add(Duration(days: 1));\
+    if (currentDay.weekday == dayOfTheWeek) \{\
+      totalDays += 1;\
+    \}\
+    \
+  \}\
+    \
+  return totalDays;\
+\}\
+\
+// Convert Days to Int\
+int convertDaysToInts (String whichDay) \{\
+  \
+  int day = 0;\
+  \
+  if (whichDay == "Monday") \{\
+    day = 1;\
+  \}\
+  else if (whichDay == "Tuesday") \{\
+    day = 2;\
+  \}\
+  else if (whichDay == "Wednesday") \{\
+    day = 3;\
+  \}\
+  else if (whichDay == "Thursday") \{\
+    day = 4;\
+  \}\
+  else if (whichDay == "Friday") \{\
+    day = 5;\
+  \}\
+  else if (whichDay == "Saturday") \{\
+    day = 6;\
+  \}\
+  else if (whichDay == "Sunday") \{\
+    day = 7;\
+  \}\
+  \
+  \
+  return day;\
+  \
+\}\
+\
+// Gets the total amount of available days\
+//Will eventually require date input\
+int totalAvailableDays (List<String> list) \{\
+  \
+  \
+  int totalAvailDays = 0;\
+  int days = 0;\
+  int dayOfWeek = 0;\
+  \
+  for (int i = 0; i < list.length; i++) \{\
+    \
+    dayOfWeek = convertDaysToInts (list[i]);\
+    \
+    days = totalDays(2020, 5, 2, 2020, 5, 21, dayOfWeek);\
+    totalAvailDays = totalAvailDays + days;\
+    \
+  \}\
+  \
+  return totalAvailDays;\
+  \
+\}\
+\
+//Get the total hours per day\
+double totalHours (int totalDays, int hours, int minutes) \{\
+  \
+  double totalHours = 0;\
+  \
+  double time = hours + (minutes / 60);\
+  \
+  totalHours = totalDays * time;\
+  \
+  \
+  return totalHours;\
+  \
+\}\
+\
+//Sliders stats are used to calculate time per each topic\
+List<double> timePerEachTopic (List<int> sliders, double totalHours) \{\
+  \
+  List<double> returnList = [0, 0, 0, 0, 0, 0, 0];\
+  List<double> percentages = [0.24, 0.20, 0.16, 0.12, 0.08, 0.04];\
+  \
+  for (int i = 0; i < sliders.length; i++) \{\
+    \
+    returnList[i] = totalHours * percentages[sliders[i]];\
+    \
+  \}\
+  \
+  \
+  return returnList;\
+  \
+\}\
+\
+\
+//Convert to hours and minutes from a double number\
+List <int> listOfHoursAndMinutes (double time) \{\
+  \
+  List<int> returnList = [0, 0];\
+  \
+  //2.54\
+  print(time.floor());\
+  returnList[0] = time.floor();\
+  \
+  returnList[1] = ((time - time.floor()) * 60).ceil();\
+  \
+  return returnList;\
+  \
+\}\
+\
+//Total of all the times in the topics and calculates how much review time there is\
+double reviewDays (List<double> times, double availableTime) \{\
+  \
+  double reviewTime = 0;\
+  double total = 0;\
+  \
+  \
+  for (int i = 0; i < times.length; i++) \{\
+    \
+    total = total + times[i];\
+    \
+  \}\
+  \
+  print(total);\
+  print(availableTime);\
+  \
+  reviewTime = availableTime - total;\
+  \
+  \
+  return reviewTime;\
+\}\
+\
+\
+\
+void main() \{\
+  \
+  int availableDays = 0;\
+  int days = 0;\
+  \
+  double availableHours = 0;\
+  \
+  List<String> daysOfTheWeek = ["Monday", "Friday", "Sunday"];\
+  \
+  availableDays = totalAvailableDays (daysOfTheWeek);\
+  print("This is how many days are actually available:");\
+  print(availableDays);\
+  \
+  availableHours = totalHours (availableDays, 2, 0);\
+  print("This is how many hours the user is available:");\
+  print(availableHours);\
+  \
+  //In this order: Arrays, LinkedList, Graphs, Strings, Sorting, Hashmaps, Trees\
+  List<int> sliderNumbers = [5, 2, 3, 4, 2, 2, 0];\
+  \
+  //In order: time for each topic\
+  List<double> listOfTimeForEachTopic = timePerEachTopic (sliderNumbers, availableHours);\
+  \
+  print(listOfTimeForEachTopic);\
+  \
+  List <int> properTime = [0,0];\
+  for (int i = 0; i < listOfTimeForEachTopic.length; i++) \{\
+    properTime = listOfHoursAndMinutes(listOfTimeForEachTopic[i]);\
+    print(properTime);\
+  \}\
+  \
+  \
+  double review = reviewDays (listOfTimeForEachTopic, availableHours);\
+  print(review);\
+  \
+  print(listOfHoursAndMinutes(review));\
+\
+  \
+  \
+  \
+\}}

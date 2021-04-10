@@ -1,6 +1,7 @@
 // main.dart
 import 'package:flutter/material.dart';
 import 'package:code_blooded/Availability.dart';
+import 'package:code_blooded/FullPlan.dart';
 
 void main() => runApp(DSCompetence());
 
@@ -558,11 +559,11 @@ class _SliderContainerState extends State<SliderContainer> {
 
             //  Second button
             RaisedButton(
-              //onPressed: () => Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (BuildContext context) => Availability(),
-              //     )),
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => FullPlan(),
+                  )),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(80.0)),
               padding: EdgeInsets.all(0.0),

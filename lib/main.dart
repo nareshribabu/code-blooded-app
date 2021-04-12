@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // Remove the debug banner
       debugShowCheckedModeBanner: false,
+      theme: new ThemeData(scaffoldBackgroundColor: const Color(0xFFFFFFFF)),
       title: 'code-blooded.com',
       home: HomePage(),
     );

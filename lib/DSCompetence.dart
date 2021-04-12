@@ -1,6 +1,7 @@
 // main.dart
-import 'package:flutter/material.dart';
 import 'package:code_blooded/Availability.dart';
+import 'package:code_blooded/Navbar.dart';
+import 'package:flutter/material.dart';
 import 'package:code_blooded/FullPlan.dart';
 
 void main() => runApp(DSCompetence());
@@ -562,7 +563,7 @@ class _SliderContainerState extends State<SliderContainer> {
               onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (BuildContext context) => FullPlan(),
+                    builder: (BuildContext context) => Navbar(),
                   )),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(80.0)),

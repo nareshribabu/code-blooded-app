@@ -1,4 +1,5 @@
 import 'package:code_blooded/Availability.dart';
+import 'package:code_blooded/EditAvailability.dart';
 import 'package:code_blooded/Checklist.dart';
 import 'package:code_blooded/FullPlan.dart';
 import 'package:code_blooded/Progress.dart';
@@ -18,7 +19,7 @@ class _MyHomePageState extends State<Navbar> {
     FullPlan(),
     Checklist(),
     Progress(),
-    Availability(),
+    EditAvailability(),
   ];
 
   void _incrementCounter() {
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<Navbar> {
     print(_currentIndex);
     switch (_currentIndex) {
       case 0:
-        builder = (BuildContext context) => Availability();
+        builder = (BuildContext context) => EditAvailability();
         break;
 
       case 1:

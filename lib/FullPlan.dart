@@ -301,7 +301,7 @@ class FullPlan extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Image.network(
-                          'assets/images/Sorting.png',
+                          'assets/images/review.png',
                           fit: BoxFit.fitWidth,
                         ),
                         ListTile(
@@ -311,31 +311,31 @@ class FullPlan extends StatelessWidget {
                       ]),
                 ),
               ),
-              // Container(
-              //   height: 180,
-              //   width: 120,
-              //   child: Card(
-              //     semanticContainer: true,
-              //     clipBehavior: Clip.antiAliasWithSaveLayer,
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(10.0),
-              //     ),
-              //     elevation: 4,
-              //     margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-              //     child: Column(
-              //         mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //         children: [
-              //           Image.network(
-              //             'assets/images/strings.png',
-              //             fit: BoxFit.fitWidth,
-              //           ),
-              //           const ListTile(
-              //             title: Text('Strings'),
-              //             subtitle: Text('3 Days'),
-              //           ),
-              //         ]),
-              //   ),
-              // ),
+              Container(
+                height: 180,
+                width: 120,
+                child: Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 4,
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.network(
+                          'assets/images/review.png',
+                          fit: BoxFit.fitWidth,
+                        ),
+                        const ListTile(
+                          title: Text('Before Interview'),
+                          subtitle: Text('1 Hour'),
+                        ),
+                      ]),
+                ),
+              ),
             ],
           ),
         ),

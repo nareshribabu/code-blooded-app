@@ -39,6 +39,86 @@ class Progress extends StatelessWidget {
             )
           ],
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 240,
+              width: 205,
+              child: Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 4,
+                  margin: EdgeInsets.fromLTRB(25, 5, 3, 0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const ListTile(
+                          title: Text('Questions Solved'),
+                          subtitle: Text(' '),
+                        ),
+                        Image.network(
+                          'assets/images/questions.png',
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ])),
+            ),
+            Container(
+              height: 240,
+              width: 205,
+              child: Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 4,
+                  margin: EdgeInsets.fromLTRB(3, 5, 25, 0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const ListTile(
+                          title: Text('Topics Studied'),
+                          subtitle: Text(' '),
+                        ),
+                        Image.network(
+                          'assets/images/topics.png',
+                          fit: BoxFit.fitWidth,
+                        ),
+                      ])),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 390,
+              width: 410,
+              child: Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  elevation: 4,
+                  margin: EdgeInsets.fromLTRB(25, 5, 25, 0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const ListTile(
+                          title: Text('Topics here'),
+                          subtitle: Text(' '),
+                        ),
+                      ])),
+            ),
+          ],
+        )
       ])),
     );
   }

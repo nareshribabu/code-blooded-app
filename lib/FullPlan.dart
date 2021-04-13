@@ -3,6 +3,8 @@ import 'package:code_blooded/Checklist.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
+import 'FullPlanBackend.dart';
+
 class FullPlan extends StatelessWidget {
   double arrays = 0.0;
   double linkedList = 0.0;
@@ -11,9 +13,49 @@ class FullPlan extends StatelessWidget {
   double sorting = 0.0;
   double hashmaps = 0.0;
   double trees = 0.0;
+
+
+  FullPlanBackend data = new FullPlanBackend();
+
+
   @override
   @override
   Widget build(BuildContext context) {
+
+    //Call all the functions here
+    print("Gets start here:");
+    print(data.getdaysPerWeek());
+    print("Start Date:");
+    print(data.getstartEndDates()[0]);
+    print(data.getstartEndDates()[0].year.runtimeType);
+
+    data.setavailableDays (data.getdaysPerWeek(), data.getstartEndDates()[0].year, data.getstartEndDates()[0].month, data.getstartEndDates()[0].day, data.getstartEndDates()[1].year, data.getstartEndDates()[1].month, data.getstartEndDates()[1].day);
+
+    print(data.getavailableDays());
+
+    print("Hours: ${data.getHours()}, Minutes: ${data.getMinutes()}");
+
+    data.setTotalAvailablehours (data.getHours(), data.getMinutes());
+
+    print(data.getTotalAvailableHours());
+
+    print(data.getSliderNumbersArrays());
+
+    data.setListOfTimeForEachTopic();
+
+    print("Time for each topic: ${data.getListOfTimeForEachTopic()}");
+
+    data.setOutputTime();
+
+    print("Output: ${data.getOutputTime()}");
+
+    print(data.getOutputTime()[0][0].toString());
+
+    data.setReviewTime();
+
+    print("Review Time: ${data.getReviewTime()}");
+
+
     return Scaffold(
       body: Center(
           child: Column(children: [
@@ -70,10 +112,11 @@ class FullPlan extends StatelessWidget {
                           'assets/images/arrays.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
+                        ListTile(
                           title: Text('Arrays'),
-                          subtitle: Text('3 Days'),
+                          subtitle: Text("${data.getOutputTime()[0][0].toString()} hr, ${data.getOutputTime()[0][1].toString()} mins"),
                         ),
+
                       ]),
                 ),
               ),
@@ -95,9 +138,9 @@ class FullPlan extends StatelessWidget {
                           'assets/images/linkedlists.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
+                        ListTile(
                           title: Text('Linked Lists'),
-                          subtitle: Text('3 Days'),
+                          subtitle: Text("${data.getOutputTime()[1][0].toString()} hr, ${data.getOutputTime()[1][1].toString()} mins"),
                         ),
                       ]),
                 ),
@@ -120,9 +163,9 @@ class FullPlan extends StatelessWidget {
                           'assets/images/graphs.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
+                        ListTile(
                           title: Text('Graphs'),
-                          subtitle: Text('3 Days'),
+                          subtitle: Text("${data.getOutputTime()[2][0].toString()} hr, ${data.getOutputTime()[2][1].toString()} mins"),
                         ),
                       ]),
                 ),
@@ -150,12 +193,12 @@ class FullPlan extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Image.network(
-                          'assets/images/hashmaps.png',
+                          'assets/images/strings.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
-                          title: Text('Hash Maps'),
-                          subtitle: Text('3 Days'),
+                        ListTile(
+                          title: Text('Strings'),
+                          subtitle: Text("${data.getOutputTime()[3][0].toString()} hr, ${data.getOutputTime()[3][1].toString()} mins"),
                         ),
                       ]),
                 ),
@@ -178,9 +221,9 @@ class FullPlan extends StatelessWidget {
                           'assets/images/Sorting.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
+                        ListTile(
                           title: Text('Sorting'),
-                          subtitle: Text('3 Days'),
+                          subtitle: Text("${data.getOutputTime()[4][0].toString()} hr, ${data.getOutputTime()[4][1].toString()} mins"),
                         ),
                       ]),
                 ),
@@ -200,12 +243,12 @@ class FullPlan extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Image.network(
-                          'assets/images/strings.png',
+                          'assets/images/hashmaps.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
-                          title: Text('Strings'),
-                          subtitle: Text('3 Days'),
+                        ListTile(
+                          title: Text('Hash Maps'),
+                          subtitle: Text("${data.getOutputTime()[5][0].toString()} hr, ${data.getOutputTime()[5][1].toString()} mins"),
                         ),
                       ]),
                 ),
@@ -236,9 +279,9 @@ class FullPlan extends StatelessWidget {
                           'assets/images/trees.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
+                        ListTile(
                           title: Text('Trees'),
-                          subtitle: Text('3 Days'),
+                          subtitle: Text("${data.getOutputTime()[6][0].toString()} hr, ${data.getOutputTime()[6][1].toString()} mins"),
                         ),
                       ]),
                 ),
@@ -261,38 +304,38 @@ class FullPlan extends StatelessWidget {
                           'assets/images/Sorting.png',
                           fit: BoxFit.fitWidth,
                         ),
-                        const ListTile(
-                          title: Text('Sorting'),
-                          subtitle: Text('3 Days'),
+                        ListTile(
+                          title: Text('Review'),
+                          subtitle: Text("${data.getReviewTime()[0]} hr, ${data.getReviewTime()[1]} mins"),
                         ),
                       ]),
                 ),
               ),
-              Container(
-                height: 180,
-                width: 120,
-                child: Card(
-                  semanticContainer: true,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  elevation: 4,
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Image.network(
-                          'assets/images/strings.png',
-                          fit: BoxFit.fitWidth,
-                        ),
-                        const ListTile(
-                          title: Text('Strings'),
-                          subtitle: Text('3 Days'),
-                        ),
-                      ]),
-                ),
-              ),
+              // Container(
+              //   height: 180,
+              //   width: 120,
+              //   child: Card(
+              //     semanticContainer: true,
+              //     clipBehavior: Clip.antiAliasWithSaveLayer,
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(10.0),
+              //     ),
+              //     elevation: 4,
+              //     margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+              //     child: Column(
+              //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //         children: [
+              //           Image.network(
+              //             'assets/images/strings.png',
+              //             fit: BoxFit.fitWidth,
+              //           ),
+              //           const ListTile(
+              //             title: Text('Strings'),
+              //             subtitle: Text('3 Days'),
+              //           ),
+              //         ]),
+              //   ),
+              // ),
             ],
           ),
         ),

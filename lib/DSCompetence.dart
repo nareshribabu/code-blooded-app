@@ -4,6 +4,8 @@ import 'package:code_blooded/Navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:code_blooded/FullPlan.dart';
 
+import 'FullPlanBackend.dart';
+
 void main() => runApp(DSCompetence());
 
 class DSCompetence extends StatelessWidget {
@@ -32,6 +34,9 @@ class _SliderContainerState extends State<SliderContainer> {
   double sorting = 0.0;
   double hashmaps = 0.0;
   double trees = 0.0;
+
+  FullPlanBackend data = new FullPlanBackend();
+
 
   @override
   Widget build(BuildContext context) {
@@ -107,6 +112,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         arrays = val;
+                        data.setSliderNumbers(val.toInt(), 0);
                       });
                     }),
               ),
@@ -174,6 +180,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         linkedList = val;
+                        data.setSliderNumbers(val.toInt(), 1);
                       });
                     }),
               ),
@@ -242,6 +249,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         strings = val;
+                        data.setSliderNumbers(val.toInt(), 2);
                       });
                     }),
               ),
@@ -310,6 +318,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         graphs = val;
+                        data.setSliderNumbers(val.toInt(), 3);
                       });
                     }),
               ),
@@ -378,6 +387,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         sorting = val;
+                        data.setSliderNumbers(val.toInt(), 4);
                       });
                     }),
               ),
@@ -446,6 +456,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         hashmaps = val;
+                        data.setSliderNumbers(val.toInt(), 5);
                       });
                     }),
               ),
@@ -514,6 +525,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     onChanged: (val) {
                       setState(() {
                         trees = val;
+                        data.setSliderNumbers(val.toInt(), 6);
                       });
                     }),
               ),
@@ -594,49 +606,3 @@ class _SliderContainerState extends State<SliderContainer> {
   }
 }
 
-// class DSCompetence extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(children: [
-//
-//         // Slider (
-//         //
-//         // ),
-//
-//
-//         Container(
-//           height: 25.0,
-//           child: RaisedButton(
-//             onPressed: () => Navigator.push(
-//                 context,
-//                 MaterialPageRoute(
-//                   builder: (BuildContext context) => Availability(),
-//                 )),
-//             shape: RoundedRectangleBorder(
-//                 borderRadius: BorderRadius.circular(80.0)),
-//             padding: EdgeInsets.all(0.0),
-//             child: Ink(
-//               decoration: BoxDecoration(
-//                   gradient: LinearGradient(
-//                     colors: [Color(0xff374ABE), Color(0xff64B6FF)],
-//                     begin: Alignment.centerLeft,
-//                     end: Alignment.centerRight,
-//                   ),
-//                   borderRadius: BorderRadius.circular(30.0)),
-//               child: Container(
-//                 constraints: BoxConstraints(maxWidth: 120.0, maxHeight: 25.0),
-//                 alignment: Alignment.center,
-//                 child: Text(
-//                   "Let's go",
-//                   textAlign: TextAlign.center,
-//                   style: TextStyle(color: Colors.white),
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ),
-//       ]),
-//     );
-//   }
-// }

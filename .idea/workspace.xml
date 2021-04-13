@@ -20,10 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db9252ad-d799-4870-8aaf-f9278266c3ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/FullPlanBackend.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Session Storage/000003.log" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Session Storage/000003.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Session Storage/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Session Storage/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Session Storage/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Session Storage/LOG.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Visited Links" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/chrome-device/Default/Visited Links" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Introduction.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Introduction.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/NOTICES" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Availability.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Availability.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/DSCompetence.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DSCompetence.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/FullPlan.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/FullPlan.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +43,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -90,25 +109,25 @@
       <screen x="-697" y="-1055" width="2560" height="1055" />
     </state>
     <state x="726" y="-825" key="#main.dart/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1616342951414" />
-    <state width="1211" height="208" key="GridCell.Tab.0.bottom" timestamp="1617237616809">
+    <state width="1472" height="253" key="GridCell.Tab.0.bottom" timestamp="1618264016135">
       <screen x="-697" y="-1055" width="2560" height="1055" />
     </state>
-    <state width="1211" height="208" key="GridCell.Tab.0.bottom/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1617237616809" />
+    <state width="1472" height="253" key="GridCell.Tab.0.bottom/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1618264016135" />
     <state width="1238" height="175" key="GridCell.Tab.0.bottom/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250690" />
-    <state width="1211" height="208" key="GridCell.Tab.0.center" timestamp="1617237616808">
+    <state width="1472" height="253" key="GridCell.Tab.0.center" timestamp="1618264016135">
       <screen x="-697" y="-1055" width="2560" height="1055" />
     </state>
-    <state width="1211" height="208" key="GridCell.Tab.0.center/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1617237616808" />
+    <state width="1472" height="253" key="GridCell.Tab.0.center/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1618264016135" />
     <state width="1238" height="175" key="GridCell.Tab.0.center/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250689" />
-    <state width="1211" height="208" key="GridCell.Tab.0.left" timestamp="1617237616807">
+    <state width="1472" height="253" key="GridCell.Tab.0.left" timestamp="1618264016134">
       <screen x="-697" y="-1055" width="2560" height="1055" />
     </state>
-    <state width="1211" height="208" key="GridCell.Tab.0.left/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1617237616807" />
+    <state width="1472" height="253" key="GridCell.Tab.0.left/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1618264016134" />
     <state width="1238" height="175" key="GridCell.Tab.0.left/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250688" />
-    <state width="1211" height="208" key="GridCell.Tab.0.right" timestamp="1617237616809">
+    <state width="1472" height="253" key="GridCell.Tab.0.right" timestamp="1618264016135">
       <screen x="-697" y="-1055" width="2560" height="1055" />
     </state>
-    <state width="1211" height="208" key="GridCell.Tab.0.right/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1617237616809" />
+    <state width="1472" height="253" key="GridCell.Tab.0.right/0.25.1280.775/-697.-1055.2560.1055@-697.-1055.2560.1055" timestamp="1618264016135" />
     <state width="1238" height="175" key="GridCell.Tab.0.right/0.25.1280.775/-697.-1055.2560.1055@0.25.1280.775" timestamp="1616628250690" />
     <state x="130" y="-781" key="IDE.errors.dialog" timestamp="1616629892368">
       <screen x="-697" y="-1055" width="2560" height="1055" />

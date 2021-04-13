@@ -4,6 +4,8 @@ import 'package:code_blooded/DSCompetence.dart';
 import 'package:flutter/services.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 
+import 'FullPlanBackend.dart';
+
 class Availability extends StatelessWidget {
   TextEditingController hoursController = new TextEditingController();
   TextEditingController minutesController = new TextEditingController();
@@ -14,6 +16,12 @@ class Availability extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    //Backend Variables
+    FullPlanBackend data = new FullPlanBackend();
+
+
+
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -69,6 +77,7 @@ class Availability extends StatelessWidget {
                               ),
                               onSelect: (values) {
                                 print(values);
+                                data.setdaysPerWeek(values);
                               },
                             ),
                           ),
@@ -112,7 +121,13 @@ class Availability extends StatelessWidget {
                                       hintText: 'HH',
                                       labelText: 'Hours ',
                                     ),
-                                  )),
+                                    onChanged: (value) {
+                                      print("Hours Text: ${value}");
+                                      data.setHours(int.parse(value));
+                                    },
+                                  )
+
+                              ),
                               SizedBox(
                                   width: 120,
                                   child: TextFormField(
@@ -127,6 +142,10 @@ class Availability extends StatelessWidget {
                                       hintText: 'MM',
                                       labelText: 'Minutes ',
                                     ),
+                                    onChanged: (value) {
+                                      print("Minutes Text: ${value}");
+                                      data.setMinutes(int.parse(value));
+                                    },
                                   ))
                             ])))
                   ]),
@@ -166,6 +185,7 @@ class Availability extends StatelessWidget {
                                             DateTime.now().year + 2));
                                 if (picked != null && picked.length == 2) {
                                   print(picked);
+                                  data.setstartEndDates(picked);
                                 }
                               },
                               child: new Icon(Icons.calendar_today,
@@ -225,5 +245,6 @@ class Availability extends StatelessWidget {
         ),
       ),
     );
+
   }
 }

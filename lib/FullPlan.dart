@@ -330,7 +330,11 @@ class FullPlan extends StatelessWidget {
                           fit: BoxFit.fitWidth,
                         ),
                         const ListTile(
-                          title: Text('Before Interview'),
+                          title: Text('Pre-Interview',
+                          style: TextStyle(
+                             fontSize: 15,
+                          )
+                          ),
                           subtitle: Text('1 Hour'),
                         ),
                       ]),

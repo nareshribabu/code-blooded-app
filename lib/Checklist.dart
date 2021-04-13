@@ -13,6 +13,7 @@ class CheckBoxListTile extends State<Checklist> {
       CheckBoxListTileModel.getUsers();
 
   double percent = 0.0;
+  int counter = 1;
 
   double _height;
   double _width;
@@ -22,11 +23,22 @@ class CheckBoxListTile extends State<Checklist> {
     Timer timer;
     timer = Timer.periodic(Duration(milliseconds: 1000), (_) {
       setState(() {
-        percent += 10;
-        if (percent >= 100) {
-          timer.cancel();
-          // percent=0;
+        if (counter == 1) {
+          percent = 20;
+        } else if (counter == 2) {
+          percent = 40;
+        } else if (counter == 3) {
+          percent = 60;
+        } else if (counter == 4) {
+          percent = 80;
+        } else if (counter == 5) {
+          percent = 100;
         }
+        // percent += 10;
+        // if (percent >= 100) {
+        //   timer.cancel();
+        //   // percent=0;
+        // }
       });
     });
     super.initState();
@@ -108,6 +120,10 @@ class CheckBoxListTile extends State<Checklist> {
                                   ),
                                   onChanged: (bool val) {
                                     itemChange(val, index);
+                                    print(val);
+                                    if (val == true) {
+                                      counter++;
+                                    }
                                   })
                             ],
                           ),
@@ -115,54 +131,148 @@ class CheckBoxListTile extends State<Checklist> {
                       ));
                 }),
           ),
-          // SizedBox(
-          //   height: 40,
-          // ),
-          // Container(
-          //     padding: EdgeInsets.all(10),
-          //     child: CircularPercentIndicator(
-          //       radius: 120.0,
-          //       lineWidth: 10.0,
-          //       animation: true,
-          //       percent: percent / 100,
-          //       center: Text(
-          //         percent.toString() + "%",
-          //         style: TextStyle(
-          //             fontSize: 20.0,
-          //             fontWeight: FontWeight.w600,
-          //             color: Colors.black),
-          //       ),
-          //       backgroundColor: Colors.grey[300],
-          //       circularStrokeCap: CircularStrokeCap.round,
-          //       progressColor: Colors.blue,
-          //     )),
-          Container(
-            height: 200,
-            width: 150,
-            child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                elevation: 4,
-                margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: CircularPercentIndicator(
-                  radius: 120.0,
-                  lineWidth: 10.0,
-                  animation: true,
-                  percent: percent / 100,
-                  center: Text(
-                    percent.toString() + "%",
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black),
-                  ),
-                  backgroundColor: Colors.grey[300],
-                  circularStrokeCap: CircularStrokeCap.round,
-                  progressColor: Colors.blue,
-                )),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 240,
+                width: 205,
+                child: Card(
+                    semanticContainer: true,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    elevation: 4,
+                    margin: EdgeInsets.fromLTRB(25, 5, 3, 0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const ListTile(
+                            title: Text('Daily Progress'),
+                            subtitle: Text(' '),
+                          ),
+                          CircularPercentIndicator(
+                            radius: 120.0,
+                            lineWidth: 10.0,
+                            animation: true,
+                            percent: percent / 100,
+                            center: Text(
+                              percent.toString() + "%",
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black),
+                            ),
+                            backgroundColor: Colors.grey[300],
+                            circularStrokeCap: CircularStrokeCap.round,
+                            progressColor: Colors.blue,
+                          ),
+                          const ListTile(
+                            title: Text(' '),
+                          ),
+                        ])),
+              ),
+              Container(
+                height: 240,
+                width: 205,
+                child: Card(
+                    semanticContainer: true,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    elevation: 4,
+                    margin: EdgeInsets.fromLTRB(3, 5, 25, 0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const ListTile(
+                            title: Text('Up Next'),
+                            subtitle: Text(' '),
+                          ),
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(80.0)),
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0.0),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.blue, Colors.blue],
+                                    // begin: Alignment.centerLeft,
+                                    // end: Alignment.centerRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.0)),
+                              child: Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 120.0, maxHeight: 25.0),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Linked List",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          FlatButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(80.0)),
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0.0),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.blue, Colors.blue],
+                                    begin: Alignment.centerRight,
+                                    end: Alignment.centerRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.0)),
+                              child: Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 120.0, maxHeight: 25.0),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Trees",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(80.0)),
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0.0),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.blue, Colors.blue],
+                                    // begin: Alignment.centerLeft,
+                                    // end: Alignment.centerRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.0)),
+                              child: Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 120.0, maxHeight: 25.0),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sorting",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const ListTile(
+                            title: Text(' '),
+                          ),
+                        ])),
+              ),
+            ],
           ),
         ],
       ),
@@ -205,6 +315,11 @@ class CheckBoxListTileModel {
           userId: 4,
           img: 'assets/images/linkedlists.png',
           title: "Solve 1 Leetcode-Hard Linked List question",
+          isCheck: false),
+      CheckBoxListTileModel(
+          userId: 5,
+          img: 'assets/images/strings.png',
+          title: "Solve 1 Leetcode-Easy Strings question",
           isCheck: false),
     ];
   }

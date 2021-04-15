@@ -133,11 +133,33 @@ class FullPlanBackend {
 //Sliders stats are used to calculate time per each topic
   List<double> timePerEachTopic(List<int> sliders, double totalHours) {
     List<double> returnList = [0, 0, 0, 0, 0, 0, 0];
-    List<double> percentages = [0.24, 0.20, 0.16, 0.12, 0.08, 0.04];
+    // List<double> percentages = [0.24, 0.20, 0.16, 0.12, 0.08, 0.04];
 
-    for (int i = 0; i < sliders.length; i++) {
-      returnList[i] = totalHours * percentages[sliders[i]];
+    //Percentages are 14% for 0 on the slider so if they pick 0 7 times it won't go over the time they have
+    List<double> percentages = [0.14, 0.12, 0.10, 0.08, 0.05, 0.03];
+
+    int countzeros = 0;
+
+    //Count how many 0s are in the sliders
+    for (var s in sliders) {
+      if (s == 0) {
+        countzeros = countzeros + 1;
+      }
     }
+
+    if (countzeros < 7) { // if its less than 7 that means that the sliders are not all 0s
+      for (int i = 0; i < sliders.length; i++) {
+        returnList[i] = totalHours * percentages[sliders[i]];
+      }
+    }
+    else { // Sliders are all 0s, make all the time allocated to all the subjects equal to 10%
+
+      //10% because this will allow the user to see what they know and then with the remaining review time they can study what they are weak in
+      for (int i = 0; i < sliders.length; i++) {
+        returnList[i] = totalHours * 0.10;
+      }
+    }
+
 
     return returnList;
   }

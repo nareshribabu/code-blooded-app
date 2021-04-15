@@ -26,24 +26,22 @@ class CheckBoxListTile extends State<Checklist> {
   void initState() {
     Timer timer;
     timer = Timer.periodic(Duration(milliseconds: 1000), (_) {
-      setState(() {
-        if (counter == 1) {
-          percent = 20;
-        } else if (counter == 2) {
-          percent = 40;
-        } else if (counter == 3) {
-          percent = 60;
-        } else if (counter == 4) {
-          percent = 80;
-        } else if (counter == 5) {
-          percent = 100;
-        }
-        // percent += 10;
-        // if (percent >= 100) {
-        //   timer.cancel();
-        //   // percent=0;
-        // }
-      });
+      if (this.mounted) {
+        // check whether the state object is in tree
+        setState(() {
+          if (counter == 1) {
+            percent = 20;
+          } else if (counter == 2) {
+            percent = 40;
+          } else if (counter == 3) {
+            percent = 60;
+          } else if (counter == 4) {
+            percent = 80;
+          } else if (counter == 5) {
+            percent = 100;
+          }
+        });
+      }
     });
     super.initState();
   }

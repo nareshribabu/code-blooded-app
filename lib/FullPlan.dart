@@ -48,16 +48,15 @@ class FullPlan extends StatelessWidget {
     data.setListOfTimeForEachTopic();
 
     print("Time for each topic: ${data.getListOfTimeForEachTopic()}");
-
-    data.setOutputTime();
-
-    print("Output: ${data.getOutputTime()}");
-
-    print(data.getOutputTime()[0][0].toString());
+    
 
     data.setReviewTime();
 
     print("Review Time: ${data.getReviewTime()}");
+
+    data.setOutputTime();
+
+    print("Output: ${data.getOutputTime()}");
 
     return Scaffold(
       body: Center(

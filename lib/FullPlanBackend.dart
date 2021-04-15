@@ -181,6 +181,7 @@ class FullPlanBackend {
   double reviewDays(List<double> times, double availableTime) {
     double reviewTime = 0;
     double total = 0;
+    double splitTime = 0;
 
     for (int i = 0; i < times.length; i++) {
       total = total + times[i];
@@ -192,6 +193,23 @@ class FullPlanBackend {
     reviewTime = availableTime - total;
 
     print("Review Time: ${reviewTime}");
+    print("RAW TIMES: ${times}");
+
+    if (reviewTime > 5) {
+      splitTime = reviewTime - 5;
+      reviewTime = 5;
+
+      //Split this time by 7 and spread it among the topics
+      splitTime = splitTime / 7;
+      for (int i = 0; i < times.length; i++) {
+        times[i] = times[i] + splitTime;
+      }
+
+    }
+
+    print("Review Time: ${reviewTime}");
+    print("RAW TIMES: ${times}");
+
 
     if (reviewTime < 0) {
       reviewTime = 0;
@@ -282,15 +300,15 @@ class FullPlanBackend {
     return outputTime;
   }
 
-  List<List<int>> outputTime = [
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0],
-    [0, 0]
-  ];
+  // List<List<int>> outputTime = [
+  //   [0, 0],
+  //   [0, 0],
+  //   [0, 0],
+  //   [0, 0],
+  //   [0, 0],
+  //   [0, 0],
+  //   [0, 0]
+  // ];
   void setOutputTime() {
     for (int i = 0; i < listOfTimeForEachTopic.length; i++) {
       outputTime[i] = listOfHoursAndMinutes(listOfTimeForEachTopic[i]);

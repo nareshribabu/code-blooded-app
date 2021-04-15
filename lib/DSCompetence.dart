@@ -41,15 +41,26 @@ class _SliderContainerState extends State<SliderContainer> {
   Widget build(BuildContext context) {
     return Column(children: [
       Padding(
-        padding: EdgeInsets.fromLTRB(0, 50, 120, 20),
-        child: Text(
-          "Choose your level of expertise",
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff121212),
-              fontFamily: 'Source Sans Pro'),
-        ),
+        padding: EdgeInsets.fromLTRB(0, 40, 120, 0),
+        child: ListTile (
+            title: Text(
+              "Choose your level of expertise",
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff121212),
+                  fontFamily: 'Source Sans Pro'),
+            ),
+          subtitle: Text(
+              "0 = Beginner, 5 = Expert",
+              style: TextStyle (
+                fontSize: 16,
+
+              )
+          ),
+
+        )
+        ,
       ),
 
       Padding(

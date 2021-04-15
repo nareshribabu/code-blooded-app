@@ -29,6 +29,11 @@ List<List<int>> outputTime = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0
 //Review Days
 List<int> reviewTime = [0, 0];
 
+// My Progress Link to the checklist
+double arrayProgress = 0.9;
+
+bool checked;
+
 
 class FullPlanBackend {
 
@@ -303,6 +308,25 @@ class FullPlanBackend {
      print(listOfHoursAndMinutes(review));
 
   }
+
+  //Progress Page
+  double getArrayProgressIncrease () {
+    return arrayProgress;
+  }
+
+  void setArrayProgressIncrease() {
+    arrayProgress = arrayProgress + 0.1;
+  }
+
+  bool getChecked () {
+    return checked;
+  }
+
+  void setChecked (bool item) {
+    checked = item;
+  }
+
+
 
 // void main() {
 //     print(finalHoursAndMinutes);

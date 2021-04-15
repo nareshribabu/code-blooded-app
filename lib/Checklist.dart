@@ -3,6 +3,8 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:async';
 
+import 'FullPlanBackend.dart';
+
 class Checklist extends StatefulWidget {
   @override
   CheckBoxListTile createState() => new CheckBoxListTile();
@@ -17,6 +19,8 @@ class CheckBoxListTile extends State<Checklist> {
 
   double _height;
   double _width;
+
+  FullPlanBackend data = new FullPlanBackend();
 
   @override
   void initState() {
@@ -124,6 +128,12 @@ class CheckBoxListTile extends State<Checklist> {
                                     if (val == true) {
                                       counter++;
                                     }
+
+                                    if (index == 1) {
+                                      data.setArrayProgressIncrease();
+                                      data.setChecked(true);
+                                    }
+
                                   })
                             ],
                           ),
@@ -298,28 +308,28 @@ class CheckBoxListTileModel {
     return <CheckBoxListTileModel>[
       CheckBoxListTileModel(
           userId: 1,
-          img: 'assets/images/arrays.png',
-          title: "Solve 2 Leetcode-Easy Array questions",
+          img: 'assets/images/strings.png',
+          title: "Solve 1 Leetcode-Easy Strings question",
           isCheck: true),
       CheckBoxListTileModel(
           userId: 2,
+          img: 'assets/images/arrays.png',
+          title: "Solve 2 Leetcode-Easy Array questions",
+          isCheck: false),
+      CheckBoxListTileModel(
+          userId: 3,
           img: 'assets/images/graphs.png',
           title: "Solve 1 Leetcode-Medium Graph question",
           isCheck: false),
       CheckBoxListTileModel(
-          userId: 3,
+          userId: 4,
           img: 'assets/images/trees.png',
           title: "Solve 1 Leetcode-Hard Trees question",
           isCheck: false),
       CheckBoxListTileModel(
-          userId: 4,
+          userId: 5,
           img: 'assets/images/linkedlists.png',
           title: "Solve 1 Leetcode-Hard Linked List question",
-          isCheck: false),
-      CheckBoxListTileModel(
-          userId: 5,
-          img: 'assets/images/strings.png',
-          title: "Solve 1 Leetcode-Easy Strings question",
           isCheck: false),
     ];
   }

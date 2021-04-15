@@ -133,7 +133,6 @@ class CheckBoxListTile extends State<Checklist> {
                                       data.setArrayProgressIncrease();
                                       data.setChecked(true);
                                     }
-
                                   })
                             ],
                           ),
@@ -202,7 +201,7 @@ class CheckBoxListTile extends State<Checklist> {
                             title: Text('Up Next'),
                             subtitle: Text(' '),
                           ),
-                          RaisedButton(
+                          FlatButton(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(80.0)),
                             color: Colors.white,
@@ -211,8 +210,6 @@ class CheckBoxListTile extends State<Checklist> {
                               decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [Colors.blue, Colors.blue],
-                                    // begin: Alignment.centerLeft,
-                                    // end: Alignment.centerRight,
                                   ),
                                   borderRadius: BorderRadius.circular(30.0)),
                               child: Container(
@@ -252,7 +249,7 @@ class CheckBoxListTile extends State<Checklist> {
                               ),
                             ),
                           ),
-                          RaisedButton(
+                          FlatButton(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(80.0)),
                             color: Colors.white,
@@ -261,8 +258,6 @@ class CheckBoxListTile extends State<Checklist> {
                               decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [Colors.blue, Colors.blue],
-                                    // begin: Alignment.centerLeft,
-                                    // end: Alignment.centerRight,
                                   ),
                                   borderRadius: BorderRadius.circular(30.0)),
                               child: Container(
@@ -271,6 +266,29 @@ class CheckBoxListTile extends State<Checklist> {
                                 alignment: Alignment.center,
                                 child: Text(
                                   "Sorting",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          FlatButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(80.0)),
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0.0),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [Colors.blue, Colors.blue],
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.0)),
+                              child: Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 120.0, maxHeight: 25.0),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Graphs",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(color: Colors.white),
                                 ),

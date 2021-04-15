@@ -8,14 +8,12 @@ import 'FullPlanBackend.dart';
 class Progress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     FullPlanBackend data = new FullPlanBackend();
     double newvalue;
     if (data.getChecked() == true) {
       newvalue = data.getArrayProgressIncrease();
       print(newvalue);
-    }
-    else {
+    } else {
       newvalue = 0.9;
     }
 
@@ -130,190 +128,194 @@ class Progress extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                           child: Container(
-                            // color: Colors.red,
+                              // color: Colors.red,
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
-                                      child: Container(
-                                        width: 102,
-                                        height: 21,
-                                        // color: Colors.blue,
-                                        child: Text(
-                                          "Arrays",
-                                          style: TextStyle(
-                                            color: Color(0x99000000),
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
+                                  child: Container(
+                                    width: 102,
+                                    height: 21,
+                                    // color: Colors.blue,
+                                    child: Text(
+                                      "Arrays",
+                                      style: TextStyle(
+                                        color: Color(0x99000000),
+                                        fontSize: 16,
                                       ),
                                     ),
-                                    LinearProgressIndicator(
-                                      value: newvalue,
-                                      backgroundColor: Color.fromARGB(255, 82, 132, 247),
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 99, 216, 247)),
-                                    ),
-
-
-                                  ]
-                              )
-                          ),
+                                  ),
+                                ),
+                                LinearProgressIndicator(
+                                  value: newvalue,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 82, 132, 247),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color.fromARGB(255, 99, 216, 247)),
+                                ),
+                              ])),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                           child: Container(
-                            // color: Colors.red,
+                              // color: Colors.red,
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 220, 10),
-                                      child: Container(
-                                        width: 102,
-                                        height: 21,
-                                        // color: Colors.blue,
-                                        child: Text(
-                                          "Linked-List",
-                                          style: TextStyle(
-                                            color: Color(0x99000000),
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 220, 10),
+                                  child: Container(
+                                    width: 102,
+                                    height: 21,
+                                    // color: Colors.blue,
+                                    child: Text(
+                                      "Linked-List",
+                                      style: TextStyle(
+                                        color: Color(0x99000000),
+                                        fontSize: 16,
                                       ),
                                     ),
-                                    LinearProgressIndicator(
-                                      value: 0.7,
-                                      backgroundColor: Color.fromARGB(255, 82, 132, 247),
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 99, 216, 247)),
-                                    ),
-                                  ]
-                              )
-                          ),
+                                  ),
+                                ),
+                                LinearProgressIndicator(
+                                  value: 0.7,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 82, 132, 247),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color.fromARGB(255, 99, 216, 247)),
+                                ),
+                              ])),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                           child: Container(
-                            // color: Colors.red,
+                              // color: Colors.red,
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
-                                      child: Container(
-                                        width: 102,
-                                        height: 21,
-                                        // color: Colors.blue,
-                                        child: Text(
-                                          "Strings",
-                                          style: TextStyle(
-                                            color: Color(0x99000000),
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
+                                  child: Container(
+                                    width: 102,
+                                    height: 21,
+                                    // color: Colors.blue,
+                                    child: Text(
+                                      "Strings",
+                                      style: TextStyle(
+                                        color: Color(0x99000000),
+                                        fontSize: 16,
                                       ),
                                     ),
-                                    LinearProgressIndicator(
-                                      value: 0.90,
-                                      backgroundColor: Color.fromARGB(255, 82, 132, 247),
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 99, 216, 247)),
-                                    ),
-                                  ]
-                              )
-                          ),
+                                  ),
+                                ),
+                                LinearProgressIndicator(
+                                  value: 0.90,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 82, 132, 247),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color.fromARGB(255, 99, 216, 247)),
+                                ),
+                              ])),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                           child: Container(
-                            // color: Colors.red,
+                              // color: Colors.red,
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
-                                      child: Container(
-                                        width: 102,
-                                        height: 21,
-                                        // color: Colors.blue,
-                                        child: Text(
-                                          "Graphs",
-                                          style: TextStyle(
-                                            color: Color(0x99000000),
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
+                                  child: Container(
+                                    width: 102,
+                                    height: 21,
+                                    // color: Colors.blue,
+                                    child: Text(
+                                      "Graphs",
+                                      style: TextStyle(
+                                        color: Color(0x99000000),
+                                        fontSize: 16,
                                       ),
                                     ),
-                                    LinearProgressIndicator(
-                                      value: 0.2,
-                                      backgroundColor: Color.fromARGB(255, 82, 132, 247),
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 99, 216, 247)),
-                                    ),
-                                  ]
-                              )
-                          ),
+                                  ),
+                                ),
+                                LinearProgressIndicator(
+                                  value: 0.2,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 82, 132, 247),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color.fromARGB(255, 99, 216, 247)),
+                                ),
+                              ])),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                           child: Container(
-                            // color: Colors.red,
+                              // color: Colors.red,
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
-                                      child: Container(
-                                        width: 102,
-                                        height: 21,
-                                        // color: Colors.blue,
-                                        child: Text(
-                                          "Sorting",
-                                          style: TextStyle(
-                                            color: Color(0x99000000),
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 250, 10),
+                                  child: Container(
+                                    width: 102,
+                                    height: 21,
+                                    // color: Colors.blue,
+                                    child: Text(
+                                      "Sorting",
+                                      style: TextStyle(
+                                        color: Color(0x99000000),
+                                        fontSize: 16,
                                       ),
                                     ),
-                                    LinearProgressIndicator(
-                                      value: 0.4,
-                                      backgroundColor: Color.fromARGB(255, 82, 132, 247),
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 99, 216, 247)),
-                                    ),
-                                  ]
-                              )
-                          ),
+                                  ),
+                                ),
+                                LinearProgressIndicator(
+                                  value: 0.4,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 82, 132, 247),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color.fromARGB(255, 99, 216, 247)),
+                                ),
+                              ])),
                         ),
                         Padding(
                           padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
                           child: Container(
-                            // color: Colors.red,
+                              // color: Colors.red,
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 0, 220, 10),
-                                      child: Container(
-                                        width: 102,
-                                        height: 21,
-                                        // color: Colors.blue,
-                                        child: Text(
-                                          "Hash-Maps",
-                                          style: TextStyle(
-                                            color: Color(0x99000000),
-                                            fontSize: 16,
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(0, 0, 220, 10),
+                                  child: Container(
+                                    width: 102,
+                                    height: 21,
+                                    // color: Colors.blue,
+                                    child: Text(
+                                      "Hash-Maps",
+                                      style: TextStyle(
+                                        color: Color(0x99000000),
+                                        fontSize: 16,
                                       ),
                                     ),
-                                    LinearProgressIndicator(
-                                      value: 0.1,
-                                      backgroundColor: Color.fromARGB(255, 82, 132, 247),
-                                      valueColor: AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 99, 216, 247)),
-                                    ),
-                                  ]
-                              )
-                          ),
+                                  ),
+                                ),
+                                LinearProgressIndicator(
+                                  value: 0.1,
+                                  backgroundColor:
+                                      Color.fromARGB(255, 82, 132, 247),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Color.fromARGB(255, 99, 216, 247)),
+                                ),
+                              ])),
                         ),
                       ])),
             ),

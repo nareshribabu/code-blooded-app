@@ -37,7 +37,6 @@ class _SliderContainerState extends State<SliderContainer> {
 
   FullPlanBackend data = new FullPlanBackend();
 
-
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -553,7 +552,7 @@ class _SliderContainerState extends State<SliderContainer> {
               child: Ink(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Color(0xff374ABE), Color(0xff64B6FF)],
+                      colors: [Colors.blue, Colors.blue],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -583,7 +582,7 @@ class _SliderContainerState extends State<SliderContainer> {
               child: Ink(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Color(0xff374ABE), Color(0xff64B6FF)],
+                      colors: [Colors.blue, Colors.blue],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -605,4 +604,3 @@ class _SliderContainerState extends State<SliderContainer> {
     ]);
   }
 }
-

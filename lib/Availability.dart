@@ -16,11 +16,8 @@ class Availability extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //Backend Variables
     FullPlanBackend data = new FullPlanBackend();
-
-
 
     return Scaffold(
       body: Center(
@@ -125,9 +122,7 @@ class Availability extends StatelessWidget {
                                       print("Hours Text: ${value}");
                                       data.setHours(int.parse(value));
                                     },
-                                  )
-
-                              ),
+                                  )),
                               SizedBox(
                                   width: 120,
                                   child: TextFormField(
@@ -222,7 +217,7 @@ class Availability extends StatelessWidget {
                   child: Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Color(0xff374ABE), Color(0xff64B6FF)],
+                          colors: [Colors.blue, Colors.blue],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),
@@ -245,6 +240,5 @@ class Availability extends StatelessWidget {
         ),
       ),
     );
-
   }
 }

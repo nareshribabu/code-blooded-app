@@ -185,9 +185,6 @@ class EditAvailability extends StatelessWidget {
                   )
                 ],
               ),
-              // Padding(
-              //     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-              //     child:
               Container(
                 height: 25,
                 child: RaisedButton(

@@ -5,6 +5,12 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 import 'FullPlanBackend.dart';
 
+// Progress dashboard consisting of a summary of the users progress in terms of:
+// - Checklist
+// - Full Plan
+// - All Topics
+// - Questions Answered
+
 class Progress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

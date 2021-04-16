@@ -1,15 +1,17 @@
 library my_project.fullplanbackend;
 
+// Backend implementation of the full plan component logic of code-blooded
+
 extension Ex on double {
   double toPrecision(int n) => double.parse(toStringAsFixed(n));
 }
 
-//Variables to get information from the screen
+// Variables to get information from the screen
 List<String> daysPerWeek; //Monday, Tuesday, etc.
 
 List<DateTime> startEndDates;
 
-//using the start and end dates and how many days per week they are available calculate the total available days
+// using the start and end dates and how many days per week they are available calculate the total available days
 int availableDays;
 
 // Total Available hours: based on hours per day and the total available days
@@ -17,10 +19,10 @@ double totalAvailableHours;
 int hours;
 int minutes;
 
-//Slider numbers
+// Slider numbers
 List<int> sliderNumbers = [0, 0, 0, 0, 0, 0, 0];
 
-//Time per each topic based on sliders
+// Time per each topic based on sliders
 List<double> listOfTimeForEachTopic;
 
 // Output Time
@@ -94,8 +96,8 @@ class FullPlanBackend {
   }
 
 // Gets the total amount of available days
-//Will eventually require date input
-//Count how many days there are in the given time (how many mondays are in the between the 2 days)
+// Will eventually require date input
+//  Count how many days there are in the given time (how many mondays are in the between the 2 days)
   int totalAvailableDays(List<String> list, int startYear, int startMonth,
       int startDay, int endYear, int endMonth, int endDay) {
     int totalAvailDays = 0;
@@ -119,7 +121,7 @@ class FullPlanBackend {
     return totalAvailDays;
   }
 
-//Get the total hours per day
+// Get the total hours per day
   double totalHours(int totalDays, int hours, int minutes) {
     double totalHours = 0;
 
@@ -130,45 +132,45 @@ class FullPlanBackend {
     return totalHours;
   }
 
-//Sliders stats are used to calculate time per each topic
+// Sliders stats are used to calculate time per each topic
   List<double> timePerEachTopic(List<int> sliders, double totalHours) {
     List<double> returnList = [0, 0, 0, 0, 0, 0, 0];
     // List<double> percentages = [0.24, 0.20, 0.16, 0.12, 0.08, 0.04];
 
-    //Percentages are 14% for 0 on the slider so if they pick 0 7 times it won't go over the time they have
+    // Percentages are 14% for 0 on the slider so if they pick 0 7 times it won't go over the time they have
     List<double> percentages = [0.14, 0.12, 0.10, 0.08, 0.05, 0.03];
 
     int countzeros = 0;
 
-    //Count how many 0s are in the sliders
+    // Count how many 0s are in the sliders
     for (var s in sliders) {
       if (s == 0) {
         countzeros = countzeros + 1;
       }
     }
 
-    if (countzeros < 7) { // if its less than 7 that means that the sliders are not all 0s
+    if (countzeros < 7) {
+      // if its less than 7 that means that the sliders are not all 0s
       for (int i = 0; i < sliders.length; i++) {
         returnList[i] = totalHours * percentages[sliders[i]];
       }
-    }
-    else { // Sliders are all 0s, make all the time allocated to all the subjects equal to 10%
+    } else {
+      // Sliders are all 0s, make all the time allocated to all the subjects equal to 10%
 
-      //10% because this will allow the user to see what they know and then with the remaining review time they can study what they are weak in
+      // 10% because this will allow the user to see what they know and then with the remaining review time they can study what they are weak in
       for (int i = 0; i < sliders.length; i++) {
         returnList[i] = totalHours * 0.10;
       }
     }
 
-
     return returnList;
   }
 
-//Convert to hours and minutes from a double number
+// Convert to hours and minutes from a double number
   List<int> listOfHoursAndMinutes(double time) {
     List<int> returnList = [0, 0];
 
-    //2.54
+    // 2.54
     print(time.floor());
     returnList[0] = time.floor();
 
@@ -177,7 +179,7 @@ class FullPlanBackend {
     return returnList;
   }
 
-//Total of all the times in the topics and calculates how much review time there is
+// Total of all the times in the topics and calculates how much review time there is
   double reviewDays(List<double> times, double availableTime) {
     double reviewTime = 0;
     double total = 0;
@@ -199,17 +201,15 @@ class FullPlanBackend {
       splitTime = reviewTime - 5;
       reviewTime = 5;
 
-      //Split this time by 7 and spread it among the topics
+      // Split this time by 7 and spread it among the topics
       splitTime = splitTime / 7;
       for (int i = 0; i < times.length; i++) {
         times[i] = times[i] + splitTime;
       }
-
     }
 
     print("Review Time: ${reviewTime}");
     print("RAW TIMES: ${times}");
-
 
     if (reviewTime < 0) {
       reviewTime = 0;
@@ -236,7 +236,7 @@ class FullPlanBackend {
     startEndDates = itsAList;
   }
 
-  //Setters and getter for availableDays
+  // Setters and getter for availableDays
   int getavailableDays() {
     return availableDays;
   }
@@ -256,27 +256,27 @@ class FullPlanBackend {
     totalAvailableHours = totalHours(availableDays, hours, minutes);
   }
 
-  //Set and get hours
+  // Set and get hours
   int getHours() {
     return hours;
   }
 
-  //Set and get minutes
+  // Set and get minutes
   void setHours(int sent) {
     hours = sent;
   }
 
-  //Set and get minutes
+  // Set and get minutes
   int getMinutes() {
     return minutes;
   }
 
-  //Set and get minutes
+  // Set and get minutes
   void setMinutes(int sent) {
     minutes = sent;
   }
 
-  //Slider getters and setters
+  // Slider getters and setters
   List<int> getSliderNumbersArrays() {
     return sliderNumbers;
   }
@@ -285,7 +285,7 @@ class FullPlanBackend {
     sliderNumbers[index] = value;
   }
 
-  //Time for each topic based on sliders
+  // Time for each topic based on sliders
   List<double> getListOfTimeForEachTopic() {
     return listOfTimeForEachTopic;
   }
@@ -295,7 +295,7 @@ class FullPlanBackend {
         timePerEachTopic(sliderNumbers, totalAvailableHours);
   }
 
-  //Output Time for each topic
+  // Output Time for each topic
   List<List<int>> getOutputTime() {
     return outputTime;
   }
@@ -309,13 +309,14 @@ class FullPlanBackend {
   //   [0, 0],
   //   [0, 0]
   // ];
+
   void setOutputTime() {
     for (int i = 0; i < listOfTimeForEachTopic.length; i++) {
       outputTime[i] = listOfHoursAndMinutes(listOfTimeForEachTopic[i]);
     }
   }
 
-  //Review Time Setters and Getters
+  // Review Time Setters and Getters
   List<int> getReviewTime() {
     return reviewTime;
   }
@@ -327,7 +328,7 @@ class FullPlanBackend {
     print(listOfHoursAndMinutes(review));
   }
 
-  //Progress Page
+  // Progress Page
   double getArrayProgressIncrease() {
     return arrayProgress;
   }

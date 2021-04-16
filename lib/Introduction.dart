@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'Availability.dart';
 
+// Introductory series of illustrations explaining code-blooded and
+// its uses to familiarize user with expectations.
+
 class Introduction extends StatelessWidget {
   final Shader linearGradient = LinearGradient(
     colors: <Color>[Color(0xff63d8f7), Color(0xff5284f7)],

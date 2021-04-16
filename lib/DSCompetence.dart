@@ -6,6 +6,16 @@ import 'package:code_blooded/FullPlan.dart';
 
 import 'FullPlanBackend.dart';
 
+// Prompts the user for their competence per data structures topic
+// Takes in competence of the following parameters:
+// - Arrays
+// - Strings
+// - Hashmaps
+// - Graphs
+// - Sorting
+// - Trees
+// - Linked Lists
+
 void main() => runApp(DSCompetence());
 
 class DSCompetence extends StatelessWidget {
@@ -27,6 +37,7 @@ class SliderContainer extends StatefulWidget {
 }
 
 class _SliderContainerState extends State<SliderContainer> {
+
   double arrays = 0.0;
   double linkedList = 0.0;
   double strings = 0.0;
@@ -54,7 +65,8 @@ class _SliderContainerState extends State<SliderContainer> {
           subtitle: Text("0 = Beginner, 5 = Expert",
               style: TextStyle(
                 fontSize: 16,
-              )),
+              )
+          ),
         ),
       ),
 

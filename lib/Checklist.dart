@@ -5,6 +5,10 @@ import 'dart:async';
 
 import 'FullPlanBackend.dart';
 
+// Renders to-do checklist to user, allowing them to check off completed items
+// and view progress updates.
+// This component is connected to the Progress component to sync updates.
+
 class Checklist extends StatefulWidget {
   @override
   CheckBoxListTile createState() => new CheckBoxListTile();

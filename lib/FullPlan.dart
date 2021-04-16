@@ -5,6 +5,10 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 import 'FullPlanBackend.dart';
 
+// The full plan component represents the main feature of this application
+// This is the UI view of all data structures topics, review days and pre-interview
+// practice - along with the computed allocated time per topic.
+
 class FullPlan extends StatelessWidget {
   double arrays = 0.0;
   double linkedList = 0.0;
@@ -48,7 +52,6 @@ class FullPlan extends StatelessWidget {
     data.setListOfTimeForEachTopic();
 
     print("Time for each topic: ${data.getListOfTimeForEachTopic()}");
-    
 
     data.setReviewTime();
 

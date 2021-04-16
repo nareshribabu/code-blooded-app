@@ -6,7 +6,17 @@ import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 
 import 'FullPlanBackend.dart';
 
+// Prompts the user for their availability to allocate time per topic accurately
+// Takes in the following parameters:
+// - Days
+// - Hours
+// - Minutes
+// - Start Date
+// - End Date
+// Performs backend calculations to be rendered through full plan
+
 class Availability extends StatelessWidget {
+
   TextEditingController hoursController = new TextEditingController();
   TextEditingController minutesController = new TextEditingController();
 
@@ -16,7 +26,7 @@ class Availability extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Backend Variables
+    // Backend Variables
     FullPlanBackend data = new FullPlanBackend();
 
     return Scaffold(
@@ -200,9 +210,6 @@ class Availability extends StatelessWidget {
                   )
                 ],
               ),
-              // Padding(
-              //     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-              //     child:
               Container(
                 height: 25,
                 child: RaisedButton(
@@ -234,7 +241,6 @@ class Availability extends StatelessWidget {
                   ),
                 ),
               )
-              // )
             ],
           ),
         ),

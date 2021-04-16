@@ -6,6 +6,12 @@ import 'package:code_blooded/Progress.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
+// Navigation bar component consisting of:
+// - Full Plan
+// - Daily Checklist
+// - Progress Dashboard
+// - Updated Availability
+
 class Navbar extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();

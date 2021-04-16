@@ -4,6 +4,15 @@ import 'package:code_blooded/DSCompetence.dart';
 import 'package:flutter/services.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRangePicker;
 
+// Prompts the user for their updated availability to allocate time per topic accurately
+// Takes in the following parameters:
+// - Days
+// - Hours
+// - Minutes
+// - Start Date
+// - End Date
+// Performs backend calculations to be rendered through full plan
+
 class EditAvailability extends StatelessWidget {
   TextEditingController hoursController = new TextEditingController();
   TextEditingController minutesController = new TextEditingController();

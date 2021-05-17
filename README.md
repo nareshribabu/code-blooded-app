@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="https://github.com/HabibaMostafa/code-blooded-app/blob/main/images/code-blooded-logo.png" alt="Code-blooded Logo"  width="100px" height="80px">
+  <img src="https://github.com/HabibaMostafa/code-blooded-app/blob/main/images/code-blooded-logo.png" alt="Code-blooded Logo"  width="200px" height="80px">
 </p>
 
 # code_blooded
